@@ -8,10 +8,9 @@ namespace Mic.Volo.CodeRepeat
     {
         static void Main(string[] args)
         {
-            var list = new List<int> { 10, 20, 30, 40, 50 };
-            var collection = new Collection<int>(list);
-            list.Add(60);
-            Console.WriteLine(String.Join(",", collection));
+            Nullable<int> nullableVariable = 0;
+            int intVariable = 1;
+            Console.WriteLine(nullableVariable.GetType() == intVariable.GetType());
         }
     }
 }
