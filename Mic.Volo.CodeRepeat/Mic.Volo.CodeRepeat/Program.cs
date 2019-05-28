@@ -8,9 +8,11 @@ namespace Mic.Volo.CodeRepeat
     {
         static void Main(string[] args)
         {
-            int? i = null;
-            i++;
-            Console.WriteLine("Value of i is {0} ", i);
+            double dVal = 100.1;
+            Console.WriteLine((int)dVal);
+
+            object objVal = dVal;
+            Console.WriteLine((int)objVal);
         }
     }
 }
