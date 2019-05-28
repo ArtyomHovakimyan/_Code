@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading;
+using System.Collections.ObjectModel;
 
 namespace Mic.Volo.CodeRepeat
 {
@@ -8,20 +8,10 @@ namespace Mic.Volo.CodeRepeat
     {
         static void Main(string[] args)
         {
-            bool isComplete = false;
-
-            var t = new Thread(() =>
-            {
-                int i = 0;
-                while (!isComplete) i += 0;
-            });
-
-            t.Start();
-
-            Thread.Sleep(500);
-            isComplete = true;
-            t.Join();
-            Console.WriteLine("complete!");
+            var list = new List<int> { 10, 20, 30, 40, 50 };
+            var collection = new Collection<int>(list);
+            list.Add(60);
+            Console.WriteLine(String.Join(",", collection));
         }
     }
 }
