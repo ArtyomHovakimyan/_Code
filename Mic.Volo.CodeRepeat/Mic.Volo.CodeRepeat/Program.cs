@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Mic.Volo.CodeRepeat
 {
@@ -6,11 +7,16 @@ namespace Mic.Volo.CodeRepeat
     {
         static void Main(string[] args)
         {
-            byte b = 100;
-            dynamic d = b;
-            Console.WriteLine(d.GetType());
-            d += 100;
-            Console.WriteLine(d.GetType());
+            var actions = new List<Action>();
+            for (int i = 0; i < 4; i++)
+            {
+                actions.Add(() => Console.WriteLine(i));
+
+            }
+            foreach (var action in actions)
+            {
+                action();
+            }
         }
     }
 }
