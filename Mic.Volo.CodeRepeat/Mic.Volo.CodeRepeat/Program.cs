@@ -1,30 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading;
 
 namespace Mic.Volo.CodeRepeat
 {
     class Program
     {
+        static int counter = 0;
+        static object locker = new object();
         static void Main(string[] args)
         {
 
+            new Thread(PrintStar).Start();
+            new Thread(PrintHashTag).Start();
 
-            Action<int> myAction = new Action<int>(DoSomething);
-
-            myAction(123);
-
-            Func<int, double> myFunc = new Func<int, double>(CalculateSomething);
-            Console.WriteLine(myFunc(5));
-            
+            Console.ReadLine();
         }
-        static void DoSomething(int i)
+        static void PrintStar()
         {
-            Console.WriteLine(i);
+            lock(locker)
+            {
+                for (counter = 0; counter < 5; counter++)
+                {
+                    Console.WriteLine("*"+"\t");
+                }
+            }
         }
-        static double CalculateSomething(int i)
+        public static void PrintHashTag()
         {
-            return (double)i / 2;
+            lock (locker)
+            {
+                for (counter = 0; counter < 5; counter++)
+                {
+                    Console.WriteLine("#" + "\t");
+                }
+            }
         }
     }
 }
