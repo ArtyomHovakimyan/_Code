@@ -22,6 +22,7 @@ namespace Mic.Volo.CodeRepeat
             Console.WriteLine("Current User {0} and he is {1} year old",user,age);
         }
     }
+
     class Program
     {
        
@@ -43,13 +44,23 @@ namespace Mic.Volo.CodeRepeat
                 _name = value;
             }
         }
+
+        class MyClass
+        {
+            string _variable;
+        }
+        struct MyStruct
+        {
+            string _Variable;
+        }
+
+       
         static void Main(string[] args)
         {
-            Double i = Double.NaN;
-            while (i == i)
-            {
-                Console.WriteLine("Hello");
-            }
+
+            MyClass myClass = new MyClass();
+            MyStruct my = new MyStruct();
+            
 
             Console.ReadLine();
         }
