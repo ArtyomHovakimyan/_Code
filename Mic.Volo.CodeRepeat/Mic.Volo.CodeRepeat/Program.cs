@@ -10,13 +10,14 @@ namespace Mic.Volo.CodeRepeat
     class Program
     {
 
-        static String location;
+        static double x = 5.0;
+        static int y = 5;
         static DateTime time;
         static void Main(string[] args)
         {
 
-            Console.WriteLine(location==null?"location is null":location);
-            Console.WriteLine(time==null?"time is null":time.ToString());
+            Console.WriteLine(x==y);
+            Console.WriteLine(time==null);
 
             Console.ReadLine();
         }
