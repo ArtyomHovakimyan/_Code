@@ -5,62 +5,30 @@ using System.Threading;
 
 namespace Mic.Volo.CodeRepeat
 {
-    class GameScore
-    {
-        string user;
-        int age;
-        public GameScore()
-        {
-            user = "Smith";
-            age = 28;
-            Console.WriteLine("Previous User {0} and he was {1} year old",user,age);
-        }
-        public GameScore(string name,int age1)
-        {
-            user = name;
-            age = age1;
-            Console.WriteLine("Current User {0} and he is {1} year old",user,age);
-        }
-    }
 
+   
     class Program
     {
-       
-        static IEnumerable<int> YieldReturn()
+       static long Total(int[] arr)
         {
-            yield return 1;
-            yield return 2;
-            yield return 3;
-        }
-        static string _name;
-        static string Name
-        {
-            get
+            long result = 0;
+            for (int i = 0; i < arr.Length; i++)
             {
-                return _name ?? "Default";
+                if(arr[i]%2==0)
+                {
+                    result += arr[i];
+                }
             }
-            set
-            {
-                _name = value;
-            }
+            return result;
         }
-
-        class MyClass
-        {
-            string _variable;
-        }
-        struct MyStruct
-        {
-            string _Variable;
-        }
-
-       
         static void Main(string[] args)
         {
-
-            MyClass myClass = new MyClass();
-            MyStruct my = new MyStruct();
-            
+            int[] a = new int[]
+            {
+                1,3,5,7,10,2,4,6,8
+            };
+            Console.WriteLine(Total(a));
+           
 
             Console.ReadLine();
         }
