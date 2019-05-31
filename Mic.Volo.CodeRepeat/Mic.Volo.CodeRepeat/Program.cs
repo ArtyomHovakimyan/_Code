@@ -9,26 +9,14 @@ namespace Mic.Volo.CodeRepeat
    
     class Program
     {
-       static long Total(int[] arr)
-        {
-            long result = 0;
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if(arr[i]%2==0)
-                {
-                    result += arr[i];
-                }
-            }
-            return result;
-        }
+
+        static String location;
+        static DateTime time;
         static void Main(string[] args)
         {
-            int[] a = new int[]
-            {
-                1,3,5,7,10,2,4,6,8
-            };
-            Console.WriteLine(Total(a));
-           
+
+            Console.WriteLine(location==null?"location is null":location);
+            Console.WriteLine(time==null?"time is null":time.ToString());
 
             Console.ReadLine();
         }
